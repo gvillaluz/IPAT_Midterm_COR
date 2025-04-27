@@ -16,18 +16,18 @@ const CertificateOfRegistration = () => {
   };
 
   // Store the employeeNumber in a new variable
-  const [data, setdata] = useState([]);
+  const [COR, setCOR] = useState({});
   const [subjects, setSubjects] = useState([]);
   const [student, setStudent] = useState({});
+  const [fees, setFees] = useState({});
 
-  const [uploadedImage, setUploadedImage] = useState(null);
   const [uploadedSignature, setUploadedSignature] = useState(null);
   const [currentDate, setCurrentDate] = useState("");
 
   // Now filter after initializing the states
   const employeeNum = getEmployeeNumFromToken();
 
-  const filteredData = data.filter((item) => String(item.employeeID) === String(employeeNum));
+  //const filteredData = data.filter((item) => String(item.employeeID) === String(employeeNum));
 
 
   useEffect(() => {
@@ -49,13 +49,17 @@ const CertificateOfRegistration = () => {
         console.error("Error fetching data:", error);
       }*/
 
-      const [studentResponse, subjectResponse] = await Promise.all([
+      const [registrationResponse, studentResponse, subjectResponse, feesResponse] = await Promise.all([
+        axios.get("http://localhost:5000/api/cor"),
         axios.get("http://localhost:5000/api/student_info"),
-        axios.get("http://localhost:5000/api/subjects")
+        axios.get("http://localhost:5000/api/subjects"),
+        axios.get("http://localhost:5000/api/fees")
       ]);
 
+      setCOR(registrationResponse.data.COR)
       setStudent(studentResponse.data.student)
       setSubjects(subjectResponse.data.subjects)
+      setFees(feesResponse.data.fees)
     };
 
     fetchItems();
@@ -128,6 +132,8 @@ const CertificateOfRegistration = () => {
     paddingBottom: "90px",
   };
 
+  console.log(fees)
+
   return (
 
     <div style={containerStyle}>
@@ -182,7 +188,7 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
 
-                <td colSpan={40} style={{ height: "0.5in", textAlign: "center" }}>
+                <td colSpan={46} style={{ height: "0.5in", textAlign: "center" }}>
                   <table width="100%" style={{ borderCollapse: "collapse" }}>
                     <tbody>
                       <tr>
@@ -225,9 +231,8 @@ const CertificateOfRegistration = () => {
                               position: "relative",
                             }}
                           >
-                            {uploadedImage ? (
                               <img
-                                src={uploadedImage}
+                                src={student.student_profile}
                                 alt="Uploaded"
                                 style={{
                                   width: "100%",
@@ -235,31 +240,6 @@ const CertificateOfRegistration = () => {
                                   objectFit: "cover",
                                 }}
                               />
-                            ) : (
-                              <div
-                                style={{
-                                  fontSize: "10px",
-                                  lineHeight: "1.2",
-                                  cursor: "pointer",
-                                  textAlign: "center",
-                                }}
-                              >
-                                Click to Upload Image
-                              </div>
-                            )}
-                            <input
-                              type="file"
-                              accept="image/*"
-                              onChange={handleImageUpload}
-                              style={{
-                                position: "absolute",
-                                width: "100%",
-                                height: "100%",
-                                opacity: 0,
-                                cursor: "pointer",
-                              }}
-                              title="Upload ID Picture"
-                            />
                           </div>
                         </td>
                       </tr>
@@ -275,12 +255,12 @@ const CertificateOfRegistration = () => {
                 </td>
               </tr>
               <tr>
-                <td colSpan={10} style={{ height: "0.1in", fontSize: "55%" }}>
+                <td colSpan={14} style={{ height: "0.1in", fontSize: "55%" }}>
                   <i>
                     <b style={{ fontFamily: 'Arial, sans-serif', fontSize: '12px', color: "black" }}>
                       Registration No:&nbsp;
                       <span style={{ color: "red" }}>
-
+                        {COR.registration_no}
                       </span>
                     </b>
                   </i>
@@ -297,14 +277,14 @@ const CertificateOfRegistration = () => {
                   }}
                 >
                   <b style={{ fontFamily: 'Arial, sans-serif', fontSize: '12px', color: "black" }}>
-                    Academic Year/Term : <span style={{ color: "red" }}>Second Semester AY 2024-2025</span>
+                    Academic Year/Term : <span style={{ color: "red" }}>{COR.academic_year_term}</span>
                   </b>
 
                 </td>
               </tr>
               <tr>
                 <td
-                  colSpan={40}
+                  colSpan={46}
                   style={{
                     height: "0.2in",
                     fontSize: "72.5%",
@@ -328,7 +308,7 @@ const CertificateOfRegistration = () => {
 
 
               <td
-                colSpan={4}
+                colSpan={6}
                 style={{
 
 
@@ -351,7 +331,7 @@ const CertificateOfRegistration = () => {
                 />
               </td>
               <td
-                colSpan={12}
+                colSpan={15}
                 style={{
 
                   fontSize: "62.5%",
@@ -374,7 +354,7 @@ const CertificateOfRegistration = () => {
                 />
               </td>
               <td
-                colSpan={3}
+                colSpan={6}
                 style={{
 
                   fontSize: "62.5%",
@@ -397,7 +377,7 @@ const CertificateOfRegistration = () => {
                 />
               </td>
               <td
-                colSpan={14}
+                colSpan={15}
                 style={{
 
                   fontSize: "62.5%",
@@ -420,7 +400,7 @@ const CertificateOfRegistration = () => {
               </td>
               <tr>
                 <td
-                  colSpan={3}
+                  colSpan={6}
                   style={{
 
                     fontSize: "62.5%",
@@ -443,7 +423,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={13}
+                  colSpan={15}
                   style={{
 
                     fontSize: "62.5%",
@@ -465,7 +445,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={3}
+                  colSpan={6}
                   style={{
 
                     fontSize: "62.5%",
@@ -488,7 +468,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={17}
+                  colSpan={16}
                   style={{
 
                     fontSize: "62.5%",
@@ -512,7 +492,7 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
                 <td
-                  colSpan={3}
+                  colSpan={6}
                   style={{
 
                     fontSize: "50%",
@@ -535,7 +515,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={13}
+                  colSpan={15}
                   style={{
 
                     fontSize: "50%",
@@ -557,7 +537,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={10}
+                  colSpan={12}
                   style={{
 
                     fontSize: "50%",
@@ -631,7 +611,7 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
                 <td
-                  colSpan={2}
+                  colSpan={6}
                   style={{
 
                     fontSize: "50%",
@@ -654,7 +634,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={14}
+                  colSpan={15}
                   style={{
 
                     fontSize: "50%",
@@ -699,7 +679,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={6}
+                  colSpan={8}
 
                   style={{
 
@@ -753,7 +733,7 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
                 <td
-                  colSpan={5}
+                  colSpan={6}
                   style={{
 
                     fontSize: "50%",
@@ -827,7 +807,7 @@ const CertificateOfRegistration = () => {
                   CODE
                 </td>
                 <td
-                  colSpan={8}
+                  colSpan={14}
                   rowSpan={2}
                   style={{
                     color: "black",
@@ -993,7 +973,7 @@ const CertificateOfRegistration = () => {
                       />
                     </td>
                     <td
-                      colSpan={8}
+                      colSpan={14}
                       style={{
                         height: "0.25in",
                         fontSize: "52.5%",
@@ -1205,8 +1185,7 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >
-                  <b>
-                    Total Unit(s)</b>
+                  <b>Total Unit(s)</b>
                 </td>
 
                 <td
@@ -1220,7 +1199,7 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >
-
+                  <b>{COR.total_lec_units}</b>
                 </td>
                 <td
                   colSpan={1}
@@ -1233,6 +1212,7 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >
+
                 </td>
                 <td
                   colSpan={1}
@@ -1245,6 +1225,7 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >
+                  <b>{COR.total_lab_units}</b>
                 </td>
                 <td
                   colSpan={1}
@@ -1257,6 +1238,7 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >
+                  <b>{COR.total_credit_units}</b>
                 </td>
                 <td
                   colSpan={2}
@@ -1281,6 +1263,7 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >
+                  <b>{COR.total_tuition}</b>
                 </td>
                 <td
                   colSpan={3}
@@ -1364,7 +1347,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Tuition (21 unit(s)) "}
+                    value={"Tuition (20 unit(s)) "}
                     style={{
                       color: "black",
                       width: "98%",
@@ -1389,7 +1372,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"2100.00"}
+                    value={fees.tuition}
                     style={{
                       textAlign: "left",
                       fontFamily: 'Arial, sans-serif',
@@ -1472,7 +1455,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"50.00"}
+                    value={fees.athletic_fee}
                     style={{
                       textAlign: "left",
                       fontFamily: 'Arial, sans-serif',
@@ -1549,7 +1532,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"50.00"}
+                    value={fees.cultural_fee}
                     style={{
                       textAlign: "left",
                       fontFamily: 'Arial, sans-serif',
@@ -1626,7 +1609,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"30.00"}
+                    value={fees.development_fee}
                     style={{
                       textAlign: "left",
                       fontFamily: 'Arial, sans-serif',
@@ -1703,7 +1686,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"30.00"}
+                    value={fees.guidance_fee}
                     style={{
                       textAlign: "left",
                       fontFamily: 'Arial, sans-serif',
@@ -1780,7 +1763,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"100.00"}
+                    value={fees.library_fee}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -1832,7 +1815,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"130.00"}
+                    value={fees.medical_dental_fee}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -1908,7 +1891,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"50.00"}
+                    value={fees.registration_fee}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -1974,7 +1957,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"500.00"}
+                    value={fees.computer_fee}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -2121,7 +2104,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"3090.00"}
+                    value={fees.total_assessment}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -2185,7 +2168,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"3090.00"}
+                    value={fees.less_financial_aid}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -2249,7 +2232,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={fees.net_assessed}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -2309,7 +2292,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Less Financial Aid : "}
+                    value={"Credit Memo : "}
                     style={{
                       color: "black",
                       width: "98%",
@@ -2334,7 +2317,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={fees.credit_memo}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -2395,7 +2378,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Medical and Dental Fee : "}
+                    value={"Total Discount : "}
                     style={{
                       color: "black",
                       width: "98%",
@@ -2420,7 +2403,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={fees.total_discount}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -2458,7 +2441,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Registration Fee : "}
+                    value={"Total Payment : "}
                     style={{
                       color: "black",
                       width: "98%",
@@ -2483,7 +2466,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={fees.total_payment}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -2521,7 +2504,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Computer Fee : "}
+                    value={"Outstanding Balance : "}
                     style={{
                       color: "black",
                       width: "98%",
@@ -2546,7 +2529,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={fees.outstanding_balance}
                     style={{
                       textAlign: "left",
                       color: "black",
@@ -2788,7 +2771,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.0"}
+                    value={fees.first_paymend_due}
                     style={{
                       color: "black",
                       fontWeight: "bold",
@@ -2811,7 +2794,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.0"}
+                    value={fees.second_paymend_due}
                     style={{
                       color: "black",
                       textAlign: "center",
@@ -2834,7 +2817,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.0"}
+                    value={fees.third_paymend_due}
                     style={{
                       color: "black",
                       textAlign: "center",
@@ -2911,7 +2894,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"February 24, 2025"}
+                    value={fees.payment_validation_date}
                     style={{
                       textDecoration: "underline",
                       color: "black",
@@ -2964,7 +2947,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Scholar  _____"}
+                    value={`${fees.official_receipt}  _____`}
                     style={{
                       color: "black",
                       textAlign: "center",
