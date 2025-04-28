@@ -138,7 +138,7 @@ const CertificateOfRegistration = () => {
 
     <div style={containerStyle}>
       <div style={contentStyle}>
-        <form
+        <div
           style={{
             border: "1px solid black",
             padding: "0.25in",
@@ -188,7 +188,7 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
 
-                <td colSpan={46} style={{ height: "0.5in", textAlign: "center" }}>
+                <td colSpan={47} style={{ height: "0.5in", textAlign: "center" }}>
                   <table width="100%" style={{ borderCollapse: "collapse" }}>
                     <tbody>
                       <tr>
@@ -284,7 +284,7 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
                 <td
-                  colSpan={46}
+                  colSpan={47}
                   style={{
                     height: "0.2in",
                     fontSize: "72.5%",
@@ -401,11 +401,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={6}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -424,11 +420,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -446,11 +438,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={6}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -469,11 +457,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={16}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -561,12 +545,8 @@ const CertificateOfRegistration = () => {
                 </td>
 
                 <td
-                  colSpan={5}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  colSpan={7}
+                  
                 >
                   <input
                     type="text"
@@ -585,12 +565,8 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  colSpan={7}
+                  
                 >
                   <input
                     type="text"
@@ -765,7 +741,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"markmontano522@gmail.com"}
+                    value={student.email_address}
                     style={{
                       color: "black",
                       width: "98%",
@@ -790,7 +766,7 @@ const CertificateOfRegistration = () => {
               <tr>
 
                 <td
-                  colSpan={4}
+                  colSpan={5}
                   rowSpan={2}
                   style={{
                     color: "black",
@@ -952,7 +928,7 @@ const CertificateOfRegistration = () => {
                 return (
                   <tr key={index}>
                     <td
-                      colSpan={4}
+                      colSpan={5}
                       style={{
                         height: "0.25in",
                         fontSize: "62.5%",
@@ -1295,7 +1271,7 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
                 <td
-                  colSpan={20}
+                  colSpan={22}
                   style={{
 
                     fontSize: "62.5%",
@@ -1339,11 +1315,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -1361,13 +1333,10 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
-
                     fontSize: "62.5%",
-
                     borderRight: "1px solid black",
-
                   }}
                 >
                   <input
@@ -1390,12 +1359,7 @@ const CertificateOfRegistration = () => {
 
 
                 <td
-                  colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  colSpan={20}
                 >
 
                   <input
@@ -1408,7 +1372,7 @@ const CertificateOfRegistration = () => {
                       width: "98%",
                       border: "none",
                       fontFamily: 'Arial, sans-serif',
-                      fontSize: '10px',
+                      fontSize: '12px',
                       fontWeight: "bold",
                       outline: "none",
                       background: "none"
@@ -1422,11 +1386,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -1444,13 +1404,10 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
-
                     fontSize: "62.5%",
-
                     borderRight: "1px solid black",
-
                   }}
                 >
                   <input
@@ -1470,12 +1427,8 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  colSpan={17}
+                  
                 >
 
                   <input
@@ -1499,11 +1452,6 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
                 >
                   <input
                     type="text"
@@ -1521,7 +1469,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -1547,14 +1495,8 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  colSpan={21}
                 >
-
                   <input
                     type="text"
                     value={"2. 80% refund of tuition fee - within 1 week from the start of classes"}
@@ -1576,11 +1518,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -1598,7 +1536,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -1624,12 +1562,8 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  colSpan={17}
+                  
                 >
 
                   <input
@@ -1653,11 +1587,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -1675,7 +1605,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -1702,11 +1632,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
 
                   <input
@@ -1730,11 +1656,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -1752,7 +1674,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -1782,11 +1704,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -1804,7 +1722,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -1830,12 +1748,8 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={20}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  colSpan={25}
+                  
                 >
 
                   <input
@@ -1858,11 +1772,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -1880,7 +1790,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -1906,7 +1816,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={20}
+                  colSpan={22}
                   style={{
 
                     textAlign: "center",
@@ -1916,7 +1826,12 @@ const CertificateOfRegistration = () => {
                     fontSize: '10px',
                   }}
                 >
-                  "As a student of EARIST, I do solemnly promise that I will
+                  <p style={{
+                    marginLeft: '45px',
+                    marginBottom: '1px'
+                  }}>
+                    "As a student of EARIST, I do solemnly promise that I will
+                  </p>
                 </td>
 
 
@@ -1924,11 +1839,7 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={15}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -1946,7 +1857,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -1982,7 +1893,11 @@ const CertificateOfRegistration = () => {
                     fontSize: '10px',
                   }}
                 >
-                  comply with the rules and regulations of the Institution."
+                  <p style={{
+                    marginLeft: "30px"
+                  }}>
+                    comply with the rules and regulations of the Institution."
+                  </p>
                 </td>
 
               </tr>
@@ -2033,7 +1948,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -2071,11 +1986,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={13}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -2093,7 +2004,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -2135,11 +2046,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={13}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -2157,7 +2064,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -2199,11 +2106,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={13}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -2221,7 +2124,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -2249,12 +2152,12 @@ const CertificateOfRegistration = () => {
 
 
                 <td
-                  colSpan={20}
+                  colSpan={25}
 
                 >
                   <input
                     type="text"
-                    value={"_________________________________"}
+                    value={"__________________________________________"}
                     style={{
                       color: "black",
                       textAlign: "center",
@@ -2265,7 +2168,7 @@ const CertificateOfRegistration = () => {
                       width: "98%",
                       border: "none",
                       outline: "none",
-                      background: "none"
+                      background: "none",
                     }}
                   />
                 </td>
@@ -2284,11 +2187,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={13}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -2306,7 +2205,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -2336,7 +2235,7 @@ const CertificateOfRegistration = () => {
 
 
                 <td
-                  colSpan={20}
+                  colSpan={25}
 
                 >
                   <input
@@ -2370,11 +2269,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={13}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -2392,7 +2287,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -2433,11 +2328,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={13}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -2455,7 +2346,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -2496,11 +2387,7 @@ const CertificateOfRegistration = () => {
                 </td>
                 <td
                   colSpan={13}
-                  style={{
-
-                    fontSize: "62.5%",
-
-                  }}
+                  
                 >
                   <input
                     type="text"
@@ -2518,7 +2405,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={5}
+                  colSpan={7}
                   style={{
 
                     fontSize: "62.5%",
@@ -2547,7 +2434,7 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
                 <td
-                  colSpan={20}
+                  colSpan={22}
                   style={{
 
                     fontSize: "62.5%",
@@ -2615,29 +2502,15 @@ const CertificateOfRegistration = () => {
 
                     }}
                   >
-                    {uploadedSignature ? (
-                      <img
-                        src={uploadedSignature}
-                        alt="Signature"
-                        style={{
-                          maxWidth: "100%",
-                          maxHeight: "100%",
-                          objectFit: "contain",
-                        }}
-                      />
-                    ) : (
-                      <label
-                        htmlFor="signatureUpload"
-                        style={{
-                          fontSize: "10px",
-                          color: "gray",
-                          cursor: "pointer",
-                          padding: "5px",
-                        }}
-                      >
-                        Click to upload your Signature
-                      </label>
-                    )}
+                    <img
+                      src={uploadedSignature}
+                      alt="Signature"
+                      style={{
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                        objectFit: "contain"
+                      }}
+                    />
                   </div>
 
                   {/* Hidden File Input */}
@@ -2656,7 +2529,7 @@ const CertificateOfRegistration = () => {
 
               <tr>
                 <td
-                  colSpan={7}
+                  colSpan={8}
                   style={{
 
                     fontSize: "62.5%",
@@ -2681,7 +2554,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={6}
+                  colSpan={7}
                   style={{
 
 
@@ -2731,7 +2604,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={20}
+                  colSpan={25}
                   style={{
 
                     fontSize: "62.5%",
@@ -2741,7 +2614,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"_______________________________"}
+                    value={"__________________________________________"}
                     style={{
                       color: "black",
                       textAlign: "center",
@@ -2761,7 +2634,7 @@ const CertificateOfRegistration = () => {
 
               <tr>
                 <td
-                  colSpan={7}
+                  colSpan={8}
                   style={{
 
                     fontSize: "62.5%",
@@ -2771,34 +2644,11 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={fees.first_paymend_due}
+                    value={fees.first_payment_due}
                     style={{
                       color: "black",
                       fontWeight: "bold",
                       textAlign: "center",
-                      width: "98%",
-                      border: "none",
-                      outline: "none",
-                      background: "none"
-                    }}
-                  />
-                </td>
-                <td
-                  colSpan={6}
-                  style={{
-
-                    fontSize: "62.5%",
-                    border: "1px solid black",
-
-                  }}
-                >
-                  <input
-                    type="text"
-                    value={fees.second_paymend_due}
-                    style={{
-                      color: "black",
-                      textAlign: "center",
-                      fontWeight: "bold",
                       width: "98%",
                       border: "none",
                       outline: "none",
@@ -2817,7 +2667,30 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={fees.third_paymend_due}
+                    value={fees.second_payment_due}
+                    style={{
+                      color: "black",
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      width: "98%",
+                      border: "none",
+                      outline: "none",
+                      background: "none"
+                    }}
+                  />
+                </td>
+                <td
+                  colSpan={7}
+                  style={{
+
+                    fontSize: "62.5%",
+                    border: "1px solid black",
+
+                  }}
+                >
+                  <input
+                    type="text"
+                    value={fees.third_payment_due}
                     style={{
                       color: "black",
                       textAlign: "center",
@@ -2830,7 +2703,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={20}
+                  colSpan={25}
                   style={{
 
                     fontSize: "12px",
@@ -2973,7 +2846,7 @@ const CertificateOfRegistration = () => {
 
               <tr>
                 <td
-                  colSpan={40}
+                  colSpan={47}
                   style={{
                     height: "0.25in",
                     fontSize: "62.5%",
@@ -2997,40 +2870,9 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
               </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
               <tr>
                 <td
-                  colSpan={40}
+                  colSpan={47}
                   style={{
                     height: "0.2in",
                     fontSize: "72.5%",
@@ -3051,7 +2893,7 @@ const CertificateOfRegistration = () => {
           </table>
 
 
-        </form>
+        </div>
       </div>
     </div>
 
