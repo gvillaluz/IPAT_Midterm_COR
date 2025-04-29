@@ -1,0 +1,106 @@
+:root {
+    --font-style: "Arial", sans-serif;
+}
+
+.title_fees {
+    font-size: 13px;
+    border: 1px solid black;
+    background-color: gray;
+    letter-spacing: 2px;
+}
+
+.label_fees {
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.total_fees {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.fees {
+    border-right: 1px solid black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rules {
+    text-align: left;
+    color: black;
+    font-family: var(--font-style);
+    font-size: 10px;
+    font-weight: bold;
+    outline: none;
+    background: none;
+}
+
+.normal_rules {
+    padding-left: 40px;
+}
+
+.title_rules {
+    text-align: center;
+    font-size: 12px;
+}
+
+.promise {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-family: var(--font-style);
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+.promise_second {
+    text-align: left;
+    padding-left: 45px;
+}
+
+.approved {
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.payments {
+    font-weight: bold;
+    border: 1px solid black;
+    font-size: 10px;
+}
+
+.payment_fees {
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.payment_receipt {
+    text-align: left;
+    padding: 10px 0 5px 10px;
+}
+
+.image-container {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 310px;
+    left: 163px;
+}
+
+.signature {
+    bottom: 430px;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}

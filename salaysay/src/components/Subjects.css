@@ -1,0 +1,14 @@
+:root {
+    --font-style: Arial, sans-serif;
+}
+
+.subject-header {
+    color: black;
+    height: 0.3in;
+    font-family: var(--font-style);
+    font-size: 12px;
+    font-weight: bold;
+    background-color: gray;
+    border: 1px solid black;
+    text-align: center;
+}
