@@ -14,32 +14,14 @@ const Subjects = ({ subjects }) => {
                 <td
                   colSpan={14}
                   rowSpan={2}
-                  style={{
-                    color: "black",
-                    height: "0.3in",
-                    fontFamily: 'Arial, sans-serif',
-                    fontSize: '12px',
-                    fontWeight: "bold",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className="subject-header"
                 >
                   SUBJECT TITLE
                 </td>
 
                 <td
                   colSpan={8}
-                  style={{
-                    color: "black",
-                    height: "0.3in",
-                    fontFamily: 'Arial, sans-serif',
-                    fontSize: '12px',
-                    fontWeight: "bold",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className="subject-header"
                 >
                   UNIT
                 </td>
@@ -47,31 +29,14 @@ const Subjects = ({ subjects }) => {
                 <td
                   colSpan={5}
                   rowSpan={2}
-                  style={{
-                    color: "black",
-                    height: "0.3in",
-                    fontFamily: 'Arial, sans-serif',
-                    fontSize: '12px',
-                    fontWeight: "bold",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className="subject-header"
                 >
                   SECTION
                 </td>
                 <td
                   colSpan={8}
                   rowSpan={2}
-                  style={{
-                    color: "black",
-                    height: "0.3in",
-                    fontSize: "12px",
-                    fontWeight: "bold",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className="subject-header"
                 >
                   SCHEDULE/ROOM
 
@@ -79,16 +44,7 @@ const Subjects = ({ subjects }) => {
                 <td
                   colSpan={8}
                   rowSpan={2}
-                  style={{
-                    color: "black",
-                    height: "0.3in",
-                    fontFamily: 'Arial, sans-serif',
-                    fontSize: '12px',
-                    fontWeight: "bold",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className="subject-header"
                 >
                   FACULTY
                 </td>
@@ -96,54 +52,26 @@ const Subjects = ({ subjects }) => {
               <tr>
                 <td
                   colSpan={2}
-                  style={{
-                    color: "black",
-                    height: "0.1in",
-                    fontSize: "50%",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className='subject-subHeader'
                 >
                   Lec
                 </td>
 
                 <td
                   colSpan={2}
-                  style={{
-                    color: "black",
-                    height: "0.1in",
-                    fontSize: "50%",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className='subject-subHeader'
                 >
                   Lab
                 </td>
                 <td
                   colSpan={2}
-                  style={{
-                    color: "black",
-                    height: "0.1in",
-                    fontSize: "50%",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className='subject-subHeader'
                 >
                   Credit
                 </td>
                 <td
                   colSpan={2}
-                  style={{
-                    color: "black",
-                    height: "0.1in",
-                    fontSize: "50%",
-                    backgroundColor: "gray",
-                    border: "1px solid black",
-                    textAlign: "center",
-                  }}
+                  className='subject-subHeader'
                 >
                   Tuition
                 </td>
@@ -153,91 +81,55 @@ const Subjects = ({ subjects }) => {
                   <tr key={index}>
                     <td
                       colSpan={5}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "62.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects names'
                     >
                         {subject.subject_code || "Null"}
                     </td>
                     <td
                       colSpan={14}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "52.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects names'
                     >
                         {subject.subject_title || "Null"}
                     </td>
                     <td
                       colSpan={2}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "52.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects units'
                     >
                         {subject.lec_units}
                     </td>
                     <td
                       colSpan={2}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "62.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects units'
                     >
                         {subject.lab_units}
                     </td>
                     <td
                       colSpan={2}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "52.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects units'
                     >
                         {subject.credit_units}
                     </td>
                     <td
                       colSpan={2}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "52.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects units'
                     >
                         {subject.tuition_units}
                     </td>
                     <td
                       colSpan={5}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "52.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects names'
                     >
                         {subject.subject_section || "Null"}
                     </td>
                     <td
                       colSpan={8}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "52.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects names'
                     >
                         {subject.subject_schedule_room || "Null"}
                     </td>
                     <td
                       colSpan={8}
-                      style={{
-                        height: "0.25in",
-                        fontSize: "52.5%",
-                        border: "1px solid black"
-                      }}
+                      className='subjects names'
                     >
                         {subject.subject_faculty}
                     </td>

@@ -1,0 +1,34 @@
+.student-header {
+    height: 0.2in;
+    font-size: 72.5%;
+    background-color: gray;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.student-info {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: black;
+    width: 98%;
+    border: none;
+    outline: none;
+    background: none;
+    text-align: left;
+}
+
+.student-labels {
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.start {
+    padding-top: 7px;
+}
+
+.end {
+    padding-bottom: 7px;
+}

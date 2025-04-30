@@ -12,3 +12,27 @@
     border: 1px solid black;
     text-align: center;
 }
+
+.subject-subHeader {
+    color: black;
+    height: 0.1in;
+    background-color: gray;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 9px;
+}
+
+.subjects {
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 4px;
+    font-weight: 500;
+}
+
+.units {
+    text-align: center;
+}
+
+.names {
+    text-align: left;
+}
